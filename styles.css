@@ -1,0 +1,314 @@
+:root {
+    --color0: #36393e;
+    --color1: #2d3143;
+    --color2: #1c1f2b;
+    --color3: #32363b;
+    --color4: #7389dc;
+}
+
+body {
+    background: var(--color2);
+}
+
+.remove_button-container {
+    height: 0;
+    position: relative;
+    border: solid 1 px red;
+    display: flex;
+    justify-content: flex-end;
+}
+
+button.remove {
+    right: 24px;
+    bottom: -48px;
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: none;
+    justify-self: flex-end;
+}
+
+button.remove:hover .cross {
+    fill: #ff0000;
+}
+
+.remove svg .cross {
+    fill: #cccccc;
+}
+
+.preview-container {
+    display: flex;
+    flex-direction: column;
+    background: var(--color0);
+}
+
+.preview {
+    display: flex;
+}
+
+.preview .avatar-container {
+    padding: 16px;
+}
+
+.preview .avatar-container img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.preview .text-container {
+    max-width: 500px;
+}
+
+.preview .text-container .announcement {
+    display: flex;
+    background: var(--color3);
+    border-radius: 4px;
+    margin: 16px;
+    color: #ffffff;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: flex;
+    width: 8px;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    border-radius: 8px 0 0 8px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 8px 0 0 8px;
+    border: none;
+}
+
+.preview .username {
+    margin: 8px 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    margin-left: 16px;
+    font-size: 32px;
+}
+
+.preview .title {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    background: none;
+    border: none;
+}
+
+.preview .description {
+    color: #ffffff;
+    font-size: 22px;
+    background: none;
+    border: none;
+}
+
+.button-container {
+    display: flex;
+    margin-left: 112px;
+}
+
+.add {
+    background: none;
+    border: none;
+    border-radius: 24px;
+    border: none;
+    margin: 20px;
+    padding: 0;
+}
+
+.add span {
+    font-size: 18px;
+    display: inline-flex;
+    margin: 8px 16px 8px 0;
+    color: #cccccc;
+}
+
+.add svg {
+    display: inline-flex;
+    margin: 8px;
+}
+
+.add svg .ball {
+    fill: #cccccc;
+}
+
+.add svg .plus {
+    fill: var(--color0);
+}
+
+.add:hover {
+    background: var(--color2);
+}
+
+.send:disabled {
+    opacity: .1;
+}
+
+.send:disabled:hover{
+    background: none;
+}
+
+.send {
+    background: none;
+    border: none;
+    border-radius: 24px;
+    border: none;
+    margin: 20px;
+    padding: 0;
+}
+
+.send span {
+    font-size: 18px;
+    display: inline-flex;
+    margin: 8px 16px 8px 0;
+    color: #cccccc;
+}
+
+.send svg {
+    display: inline-flex;
+    margin: 8px;
+}
+
+svg.sended {
+    transform-origin: top left;
+    animation: spin-reverse;
+    animation-duration: 500ms;
+}
+
+.send svg .icon {
+    fill: #cccccc;
+}
+
+.send svg .plus {
+    fill: var(--color0);
+}
+
+.send:hover {
+    background: var(--color2);
+}
+
+.config-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.config-container .content {
+    display: none;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    background: var(--color3);
+    transition: display 1000ms;
+    color: #cccccc;
+}
+
+.config-container .content.opened {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    animation: expand;
+    animation-duration: 1000ms;
+}
+
+.config-container .content.closed {
+    display: none;
+}
+
+.config-container .content button {
+    margin: 16px 0;
+    background-color: var(--color4);
+    border: none;
+    border-radius: 16px;
+    color: #ffffff;
+}
+
+button:focus {
+    outline: none;
+}
+
+.config {
+    background: none;
+    border: none;
+    border-radius: 24px;
+    border: none;
+    margin: 20px;
+    padding: 0;
+}
+
+.config.open {
+    animation: spin;
+    animation-duration: 500ms;
+}
+
+.config.close {
+    animation: spin-reverse;
+    animation-duration: 500ms;
+}
+
+.config span {
+    font-size: 18px;
+    display: inline-flex;
+    margin: 8px 16px 8px 0;
+    color: #cccccc;
+}
+
+.config svg {
+    display: inline-flex;
+    margin: 8px;
+}
+
+.config svg .icon {
+    fill: #cccccc;
+}
+
+.config:hover {
+    background: var(--color2);
+}
+
+@keyframes expand {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spin-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
